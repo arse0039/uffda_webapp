@@ -16,45 +16,65 @@
         </ul>  
     </div>
     </header>
-    <div class="main">
-<table class="" border="1" cellpadding="3">
-  <caption><strong>All Participants</strong></caption>
-  <tr>
-    <th>ID</th>
-    <th>Age Group</th>
-    <th>Name</th>
-    <th>Address</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <tr>
-    <td align="center" >1</td>
-    <td align="center" >18+</td>
-    <td align="center" > Captain America</td>
-    <td align="center" >612 Upside Down Lane</td>
-    <td><button onclick="editActivity()">Edit</button></td>
-    <td><button onclick="deleteActivity()">Remove</button></td>
-  </tr>
-  <tr>
-    <td align="center"  >2</td>
-    <td align="center" >14 to 18</td>
-    <td align="center" > Mike Tyson</td>
-    <td align="center" >555 Punchers Way</td>
-    <td><button onclick="editActivity()">Edit</button></td>
-    <td><button onclick="deleteActivity()">Remove</button></td>
-  </tr>
-  <tr>
-    <td align="center"  >3</td>
-    <td align="center" >18+</td>
-    <td align="center"  > Humpty Dumpty</td>
-    <td align="center" >1820 High Wall Blvd</td>
-    <td><button onclick="editActivity()">Edit</button></td>
-    <td><button onclick="deleteActivity()">Remove</button></td>
-  </tr>
 
+<div class="main">
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Age Group</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>18+</td>
+      <td> Captain America</td>
+      <td>612 Upside Down Lane</td>
+      <td>
+        <button class="table-button" ion-button icon-only onclick="editActivity()">
+            <ion-icon name="build-outline"></ion-icon>
+        </button><br>
+        <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+            <ion-icon name="trash-outline"></ion-icon>
+        </button>
+    </td>
+    </tr>
+    <tr>
+      <td align="center"  >2</td>
+      <td align="center" >14 to 18</td>
+      <td align="center" > Mike Tyson</td>
+      <td align="center" >555 Punchers Way</td>
+      <td>
+        <button class="table-button" ion-button icon-only onclick="editActivity()">
+            <ion-icon name="build-outline"></ion-icon>
+        </button><br>
+        <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+            <ion-icon name="trash-outline"></ion-icon>
+        </button>
+    </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>18+</td>
+      <td> Humpty Dumpty</td>
+      <td>1820 High Wall Blvd</td>
+      <td>
+        <button class="table-button" ion-button icon-only onclick="editActivity()">
+            <ion-icon name="build-outline"></ion-icon>
+        </button><br>
+        <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+            <ion-icon name="trash-outline"></ion-icon>
+        </button>
+    </td>
+    </tr>
+  </tbody>
 </table>
-<p>&nbsp;</p>
 </div>
+<p>&nbsp;</p>
 <div id="forms">
 <div id="insert">
     <form method="POST" id="addParticipant">
@@ -115,6 +135,7 @@
   </form> 
 </div>
 </div>
-
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
 </body>
 </html>

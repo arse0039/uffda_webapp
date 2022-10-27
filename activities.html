@@ -7,6 +7,7 @@
     <title>Activities</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
     <header>
     <h1 class="mainTitle">Activities</h1>
@@ -90,31 +91,32 @@
     </table>
 
     <p>&nbsp;</p>
-
-    <div id="insert">
-    <form method="POST" id="addActivity">
-        <legend align="center"><strong>Add Activity</strong></legend>
-          <fieldset class="fields">
-            <label> Location ID </label> <input type="int" name="location"><br>
-            <label> Volunteer ID </label> <input type="int" name="volunteer"><br>
-            <label> Age Group </label> <select name="age_group"><br>
-            	<option value=>&nbsp;</option>
-                <option value="4 to 5">4 to 5</option>
-                <option value="6 to 10">6 to 10</option>
-                <option value="10 to 13">10 to 13</option>
-                <option value="14 to 18">14 to 18</option>
-                <option value="18+">18+</option>
-                </select><br>
-            <label> Name </label> <input type="text" name="activity_name"><br>
-            <label> Description </label> <input type="text" name="activity_description"><br>
-            <label> Max Participants </label> <input type="int" name="max_participants">
-      </fieldset>
-          <input class="btn" type="submit" id="addActivity" value="Create Activity">
-	</form>  
+    <div>
+    <div id="activity-insert">
+        <form method="POST" id="addActivity">
+            <legend align="center"><strong>Add Activity</strong></legend>
+            <fieldset class="fields">
+                <label> Location ID </label> <input type="int" name="location"><br>
+                <label> Volunteer ID </label> <input type="int" name="volunteer"><br>
+                <label> Age Group </label> <select name="age_group"><br>
+                    <option value=>&nbsp;</option>
+                    <option value="4 to 5">4 to 5</option>
+                    <option value="6 to 10">6 to 10</option>
+                    <option value="10 to 13">10 to 13</option>
+                    <option value="14 to 18">14 to 18</option>
+                    <option value="18+">18+</option>
+                    </select><br>
+                <label> Name </label> <input type="text" name="activity_name"><br>
+                <label> Description </label> <input type="text" name="activity_description"><br>
+                <label> Max Participants </label> <input type="int" name="max_participants">
+        </fieldset>
+            <input class="btn" type="submit" id="addActivity" value="Create Activity">
+        </form>  
+    </div>
 
     <p>&nbsp;</p>
 
-    <div id="update">
+    <div id="activity-update">
         <form method="POST" id="updateActivity">
             <legend align="center"><strong>Update Activity</strong></legend>
               <fieldset class="fields">
@@ -134,24 +136,26 @@
           </fieldset>
               <input class="btn" type="submit" id="updateActivity" value="Update Existing Activity">
         </form>
+    </div>
         
         <p>&nbsp;</p>
 
-        <div id="delete">
-            <form method="POST" id="deleteActivity">
-                <legend align="center"><strong>Delete Activity</strong></legend>
-                    <fieldset class="fields">
-                    <p>Are you sure you wish to delete the following?</p>
-                    <input type="hidden" name="activityID" id="deleteActivityID" value="2">
-                    <label><strong>ID:</strong></label> 2
-                      <label> <strong>Name</strong> </label> 4_5Baseball_Orioles
-                      
-              </fieldset>
-              <input class="btn" type="submit" id="deleteActivity" value="Delete Activity">
-            </form> 
+    <div id="activity-delete">
+        <form method="POST" id="deleteActivity">
+            <legend align="center"><strong>Delete Activity</strong></legend>
+                <fieldset class="fields">
+                <p>Are you sure you wish to delete the following?</p>
+                <input type="hidden" name="activityID" id="deleteActivityID" value="2">
+                <label><strong>ID:</strong></label> 2
+                    <label> <strong>Name</strong> </label> 4_5Baseball_Orioles
+                    
+            </fieldset>
+            <input class="btn" type="submit" id="deleteActivity" value="Delete Activity">
+        </form> 
 
-            <p>&nbsp;</p>
+        <p>&nbsp;</p>
         </div>
+    </div>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
     </body>

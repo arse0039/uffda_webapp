@@ -20,15 +20,13 @@
         </div>
     </header>
     <div class="main">   
-    <table border="1" cellpadding="5" align="center">
-        <caption><strong>All Volunteers</strong></caption>
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>email</th>
                 <th>Role</th>
-                <th></th>
                 <th></th>
             </tr>
         </thead>
@@ -37,25 +35,43 @@
                 <td>1</td>
                 <td>Billy</td>
                 <td>billy@email.com</td>
-                <td>coach</td>
-                <td align="center"><button onclick="editVolunteer()">Edit</button></td>
-                <td align="center"><button onclick="deleteVolunteer()">Remove</button></td>
+                <td>Coach</td>
+                <td>
+                    <button class="table-button" ion-button icon-only onclick="editActivity()">
+                        <ion-icon name="build-outline"></ion-icon>
+                    </button><br>
+                    <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </button>
+                </td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Bob</td>
                 <td>bob@email.com</td>
-                <td>instructor</td>
-                <td align="center"><button onclick="editVolunteer()">Edit</button></td>
-                <td align="center"><button onclick="deleteVolunteer()">Remove</button></td>
+                <td>Instructor</td>
+                <td>
+                    <button class="table-button" ion-button icon-only onclick="editActivity()">
+                        <ion-icon name="build-outline"></ion-icon>
+                    </button><br>
+                    <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </button>
+                </td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Joseph</td>
                 <td>joseph@email.com</td>
-                <td>head coach</td>
-                <td align="center"><button onclick="editVolunteer()">Edit</button></td>
-                <td align="center"><button onclick="deleteVolunteer()">Remove</button></td>
+                <td>Head Coach</td>
+                <td>
+                    <button class="table-button" ion-button icon-only onclick="editActivity()">
+                        <ion-icon name="build-outline"></ion-icon>
+                    </button><br>
+                    <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -117,6 +133,8 @@
 
             <p>&nbsp;</p>
         </div>
-</body>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
+    </body>
 
 </html>
