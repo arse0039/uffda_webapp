@@ -77,7 +77,7 @@ header ul li:hover{
 table {
     align-self: center;
 
-    border-collapse:separate;
+    border-collapse:collapse;
     margin-left: auto;
     margin-right: auto;
     padding: 10px 10px;
@@ -97,4 +97,33 @@ thead th{
 td{
     padding: 5px 5px;
     text-align: center;
+    border-bottom: 0.1px #bcbaba solid;
 }
+
+tr:nth-of-type(even) {
+    background-color: #a2b7c6;
+}
+
+tr:last-of-type {
+    border-bottom: 2px solid #0C3554;
+}
+
+/* table buttons */
+
+ion-icon {
+    font-size: 26px;
+}
+
+.table-button{
+    border:none;
+    padding: 0;
+    background: none;
+    cursor:pointer; 
+    transition: transform .1s ease-in-out;
+}
+
+.table-button:hover{
+    transform: rotate(10deg);
+}
+
+
