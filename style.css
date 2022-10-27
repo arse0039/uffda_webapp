@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Avanta Garde', sans-serif;
+}
+body {
+    background: #B1BEC8;
+    display:inline;
+}
+
+/* Nav Bar Styling */
+.main {
+    height: 180px;
+    margin-top: 95px;
+}
+header {
+    position: absolute;
+    width: 100%;
+    height: 85px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #64849C ;
+}
+
+.mainTitle {
+    letter-spacing: 0.1em;
+    font-size: 2.0em;
+}
+.nav-div {
+    display: flex;
+    align-items: center
+}
+.navbar {
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+header ul li {
+    list-style: none;
+}
+header ul li a {
+    color: #111;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    position: relative;
+}
+header ul li a::before {
+    content: '';
+    position:absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2.3px;
+    background: #BBB;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+    transform-origin:center;
+}
+header ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: center;
+    background: #BBB;
+}
+
+header ul li a:hover{
+    color: #BBB;
+
+    transform: scaleY(1)
+}
+header ul li:hover{
+    transform: scaleY(1.2);
+}
+
+/* Table Styling */
+table {
+    align-self: center;
+
+    border-collapse:separate;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 10px;
+    font-size: 1.05em;
+    min-width: 200px;
+    max-width: 1300px;
+}
+thead th{
+    background: #0C3554;
+    color: #BBB;
+    text-align: center;
+    font-weight: bold;
+    padding: 0px 22px;
+
+}
+
+td{
+    padding: 5px 5px;
+    text-align: center;
+}

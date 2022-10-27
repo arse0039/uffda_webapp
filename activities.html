@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Activities</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+    <h1 class="mainTitle">Activities</h1>
+    <div class="nav-div">
+        <ul class="navbar">
+            <li><a href="participants.html">Participants</a></li>
+            <li><a href="volunteers.html">Volunteers</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="ageGroups.html">Age Groups</a></li>
+        </ul>  
+    </div>
+    </header>
+    <div class="main">
+    <table>
+        <caption><strong>All Activities</strong></caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Location</th>
+                <th>Volunteer</th>
+                <th>Age Group</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Max Participants</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Highlakes Baseball Field</td>
+                <td>Joseph</td>
+                <td>6 to 10</td>
+                <td>6_10Baseball_Marineers</td>
+                <td>6-10 baseball Team Marineers</td>
+                <td>15</td>
+                <td><button onclick="editActivity()">Edit</button><br>
+                <button onclick="deleteActivity()">Remove</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Lava Ridge Baseball Field</td>
+                <td>Katrina</td>
+                <td>4 to 5</td>
+                <td>4_5Baseball_Orioles</td>
+                <td>4-5 baseball Team Orioles</td>
+                <td>15</td>
+                <td><button class="button" onclick="editActivity()">Edit</button><br>
+                <button class="button" onclick="deleteActivity()">Remove</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Ensworth Baseball Field</td>
+                <td>Julie</td>
+                <td>4 to 5</td>
+                <td>4_5Baseball_Cardinals</td>
+                <td>4-5 baseball Team Cardinals</td>
+                <td>15</td>
+                <td><button class="button" onclick="editActivity()">Edit</button><br>
+                <button class="button" onclick="deleteActivity()">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <div id="insert">
+    <form method="POST" id="addActivity">
+        <legend align="center"><strong>Add Activity</strong></legend>
+          <fieldset class="fields">
+            <label> Location ID </label> <input type="int" name="location"><br>
+            <label> Volunteer ID </label> <input type="int" name="volunteer"><br>
+            <label> Age Group </label> <select name="age_group"><br>
+            	<option value=>&nbsp;</option>
+                <option value="4 to 5">4 to 5</option>
+                <option value="6 to 10">6 to 10</option>
+                <option value="10 to 13">10 to 13</option>
+                <option value="14 to 18">14 to 18</option>
+                <option value="18+">18+</option>
+                </select><br>
+            <label> Name </label> <input type="text" name="activity_name"><br>
+            <label> Description </label> <input type="text" name="activity_description"><br>
+            <label> Max Participants </label> <input type="int" name="max_participants">
+      </fieldset>
+          <input class="btn" type="submit" id="addActivity" value="Create Activity">
+	</form>  
+
+    <p>&nbsp;</p>
+
+    <div id="update">
+        <form method="POST" id="updateActivity">
+            <legend align="center"><strong>Update Activity</strong></legend>
+              <fieldset class="fields">
+                <label> Location ID </label> <input type="int" name="location"><br>
+                <label> Volunteer ID </label> <input type="int" name="volunteer"><br>
+                <label> Age Group </label> <select name="age_group"><br>
+                    <option value=>&nbsp;</option>
+                    <option value="4 to 5">4 to 5</option>
+                    <option value="6 to 10">6 to 10</option>
+                    <option value="10 to 13">10 to 13</option>
+                    <option value="14 to 18">14 to 18</option>
+                    <option value="18+">18+</option>
+                    </select><br>
+                <label> Name </label> <input type="text" name="activity_name"><br>
+                <label> Description </label> <input type="text" name="activity_description"><br>
+                <label> Max Participants </label> <input type="int" name="max_participants">
+          </fieldset>
+              <input class="btn" type="submit" id="updateActivity" value="Update Existing Activity">
+        </form>
+        
+        <p>&nbsp;</p>
+
+        <div id="delete">
+            <form method="POST" id="deleteActivity">
+                <legend align="center"><strong>Delete Activity</strong></legend>
+                    <fieldset class="fields">
+                    <p>Are you sure you wish to delete the following?</p>
+                    <input type="hidden" name="activityID" id="deleteActivityID" value="2">
+                    <label><strong>ID:</strong></label> 2
+                      <label> <strong>Name</strong> </label> 4_5Baseball_Orioles
+                      
+              </fieldset>
+              <input class="btn" type="submit" id="deleteActivity" value="Delete Activity">
+            </form> 
+
+            <p>&nbsp;</p>
+        </div>
+</body>
+
+</html>
+

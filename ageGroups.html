@@ -1,0 +1,104 @@
+<html>
+<head>
+  <title>Age Groups</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<header>
+  <h1 class="mainTitle">Age Groups</h1>
+  <div class="nav-div">
+      <ul class="navbar">
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="participants.html">Participants</a></li>
+          <li><a href="volunteers.html">Volunteers</a></li>
+          <li><a href="locations.html">Locations</a></li>
+      </ul>  
+  </div>
+  </header>
+<div class="main">
+<table border="1" cellpadding="5">
+  <caption><strong>All Age Groups</strong></caption>
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td align="center" >1</td>
+    <td align="center" >4 to 5</td>
+    <td><button onclick="editActivity()">Edit</button></td>
+    <td><button onclick="deleteActivity()">Remove</button></td>
+  </tr>
+  <tr>
+    <td align="center" >2</td>
+    <td align="center" >6 to 9</td>
+    <td><button onclick="editActivity()">Edit</button></td>
+    <td><button onclick="deleteActivity()">Remove</button></td>
+  </tr>
+  <tr>
+    <td align="center" >3</td>
+    <td align="center" >10 to 13</td>
+    <td><button onclick="editActivity()">Edit</button></td>
+    <td><button onclick="deleteActivity()">Remove</button></td>
+  </tr>
+  <tr>
+    <td align="center" >4</td>
+    <td align="center" >14 to 18</td>
+    <td><button onclick="editActivity()">Edit</button></td>
+    <td><button onclick="deleteActivity()">Remove</button></td>
+  </tr>
+  <tr>
+    <td align="center" >5</td>
+    <td align="center" >18+</td>
+    <td><button onclick="editActivity()">Edit</button></td>
+    <td><button onclick="deleteActivity()">Remove</button></td>
+  </tr>
+
+</table>
+<p>&nbsp;</p>
+</div>
+<div id="forms">
+<div id="insert">
+    <form method="POST" id="addAge">
+        <legend><strong>Add Age Group</strong></legend>
+          <fieldset class="fields">
+            <label> Description </label> <input type="text" name="ageGroupName"><br>
+      </fieldset>
+          <input class="btn" type="submit" id="addAgeButton" value="Add Age Group">
+          <input class="btn" type="button" value="Clear">
+	</form> 
+</div>
+<p>&nbsp;</p>
+<div id="update">
+    <form method="POST" id="UpdateAge">
+        <legend><strong>Update Age Group</strong></legend>
+          <fieldset class="fields">
+          <input type="hidden" name="locationID" id="updateAgeinput" value="2">
+          <label> ID: </label> 2 <br>
+          <label> Description </label> <input type="text" name="agedesc" value="6 to 9"><br>
+      </fieldset>
+          <input class="btn" type="submit" id="UpdateAgeSubmit" value="Update Age Group">
+          <input class="btn" type="button" value="Clear">
+	</form> 
+</div>
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form method="POST" id="delAge">
+      <legend><strong>Delete Age Group</strong></legend>
+          <fieldset class="fields">
+          <p>Are you sure you wish to delete this age group?</p>
+          <input type="hidden" name="ageID" id="deleteAge" value="2">
+          <label><strong>ID:</strong></label> 2 <br>
+            <label> <strong>Name:</strong> </label> 6 to 9
+            
+    </fieldset>
+    <input class="btn" type="submit" id="DeleteAge" value="Delete Age Group">
+          <input class="btn" type="button" value="Clear">
+  </form> 
+</div>
+</div>
+
+</body>
+</html>

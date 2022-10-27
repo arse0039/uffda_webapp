@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Volunteers</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <h1 class="mainTitle">Volunteers</h1>
+        <div class="nav-div">
+            <ul class="navbar">
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="participants.html">Participants</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="ageGroups.html">Age Groups</a></li>
+            </ul>  
+        </div>
+    </header>
+    <div class="main">   
+    <table border="1" cellpadding="5" align="center">
+        <caption><strong>All Volunteers</strong></caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>email</th>
+                <th>Role</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Billy</td>
+                <td>billy@email.com</td>
+                <td>coach</td>
+                <td align="center"><button onclick="editVolunteer()">Edit</button></td>
+                <td align="center"><button onclick="deleteVolunteer()">Remove</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Bob</td>
+                <td>bob@email.com</td>
+                <td>instructor</td>
+                <td align="center"><button onclick="editVolunteer()">Edit</button></td>
+                <td align="center"><button onclick="deleteVolunteer()">Remove</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Joseph</td>
+                <td>joseph@email.com</td>
+                <td>head coach</td>
+                <td align="center"><button onclick="editVolunteer()">Edit</button></td>
+                <td align="center"><button onclick="deleteVolunteer()">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <div id="insert">
+    <form method="POST" id="addVolunteer">
+        <legend align="center"><strong>Create New Volunteer</strong></legend>
+          <fieldset class="fields">
+            <label> Name </label> <input type="text" name="volunteer_name"><br>
+            <label> email </label> <input type="email" name="volunteer_email"><br>
+            <label> role </label> <select name="volunteer_role"><br>
+            	<option value=>&nbsp;</option>
+                <option value="instructor">instructor</option>
+                <option value="coach">coach</option>
+                <option value="head coach">head coach</option>
+                <option value="assistant coach">assistant coach</option>
+                <option value="guide">guide</option>
+                </select><br>
+      </fieldset>
+          <input class="btn" type="submit" id="addVolunteer" value="Create Volunteer">
+	</form>  
+
+    <p>&nbsp;</p>
+
+    <div id="update">
+        <form method="POST" id="updateVolunteer">
+            <legend align="center"><strong>Update Existing Volunteer</strong></legend>
+            <fieldset class="fields">
+                <label> Name </label> <input type="text" name="volunteer_name"><br>
+                <label> email </label> <input type="email" name="volunteer_email"><br>
+                <label> role </label> <select name="volunteer_role"><br>
+                    <option value=>&nbsp;</option>
+                    <option value="instructor">instructor</option>
+                    <option value="coach">coach</option>
+                    <option value="head coach">head coach</option>
+                    <option value="assistant coach">assistant coach</option>
+                    <option value="guide">guide</option>
+                    </select><br>
+          </fieldset>
+              <input class="btn" type="submit" id="updateVolunteer" value="Update Existing Volunteer">
+        </form>
+        
+        <p>&nbsp;</p>
+
+        <div id="delete">
+            <form method="POST" id="deleteVolunteer">
+                <legend align="center"><strong>Delete Existing Volunteer</strong></legend>
+                    <fieldset class="fields">
+                    <p>Are you sure you wish to delete the following?</p>
+                    <input type="hidden" name="volunteerID" id="deletevolunteerID" value="2">
+                    <label><strong>ID:</strong></label> 2
+                      <label> <strong>Name</strong> </label> Bob
+                      
+              </fieldset>
+              <input class="btn" type="submit" id="deleteVolunteer" value="Delete Volunteer">
+            </form> 
+
+            <p>&nbsp;</p>
+        </div>
+</body>
+
+</html>

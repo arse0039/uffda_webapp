@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>Participants</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="mainTitle">Participants</h1>
+    <div class="nav-div">
+        <ul class="navbar">
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="volunteers.html">Volunteers</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="ageGroups.html">Age Groups</a></li>
+        </ul>  
+    </div>
+    </header>
+    <div class="main">
+<table class="" border="1" cellpadding="3">
+  <caption><strong>All Participants</strong></caption>
+  <tr>
+    <th>ID</th>
+    <th>Age Group</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td align="center" >1</td>
+    <td align="center" >18+</td>
+    <td align="center" > Captain America</td>
+    <td align="center" >612 Upside Down Lane</td>
+    <td><button onclick="editActivity()">Edit</button></td>
+    <td><button onclick="deleteActivity()">Remove</button></td>
+  </tr>
+  <tr>
+    <td align="center"  >2</td>
+    <td align="center" >14 to 18</td>
+    <td align="center" > Mike Tyson</td>
+    <td align="center" >555 Punchers Way</td>
+    <td><button onclick="editActivity()">Edit</button></td>
+    <td><button onclick="deleteActivity()">Remove</button></td>
+  </tr>
+  <tr>
+    <td align="center"  >3</td>
+    <td align="center" >18+</td>
+    <td align="center"  > Humpty Dumpty</td>
+    <td align="center" >1820 High Wall Blvd</td>
+    <td><button onclick="editActivity()">Edit</button></td>
+    <td><button onclick="deleteActivity()">Remove</button></td>
+  </tr>
+
+</table>
+<p>&nbsp;</p>
+</div>
+<div id="forms">
+<div id="insert">
+    <form method="POST" id="addParticipant">
+        <legend><strong>Add Participant</strong></legend>
+          <fieldset class="fields">
+            <label> First Name </label> <input type="text" name="fname"><br>
+            <label> Last Name </label> <input type="text" name="lname"><br>
+            <label> Age Group </label> <select name="ageGroup">
+            	<option value="0">&nbsp;</option>
+                <option value="1">4 to 5</option>
+                <option value="2">6 to 10</option>
+                <option value="3">10 to 13</option>
+                <option value="4">14 to 18</option>
+                <option value="5">18+</option>
+                </select><br>
+            <label> Address </label> <input type="text" name="address">
+      </fieldset>
+          <input class="btn" type="submit" id="addPerson" value="Add Participant">
+          <input class="btn" type="button" value="Clear">
+	</form> 
+</div>
+<p>&nbsp;</p>
+<div id="update">
+    <form method="POST" id="UpdatePerson">
+        <legend><strong>Update Participant</strong></legend>
+          <fieldset class="fields">
+          <input type="hidden" name="personID" id="updatepersonID" value="1">
+          <label> ID: </label> 2
+          <label> First Name </label> <input type="text" name="fname" value="Mike"><br>
+          <label> Last Name </label> <input type="text" name="lname" value="Tyson"><br>
+          <label> Age Group </label> <select name="ageGroup"><br>
+              <option value="0">&nbsp;</option>
+              <option value="1">4 to 5</option>
+              <option value="2">6 to 10</option>
+              <option value="3">10 to 13</option>
+              <option value="4">14 to 18</option>
+              <option value="5">18+</option>
+              </select><br>
+          <label> Address </label> <input type="text" name="age" value="555 Punchers Way">
+      </fieldset>
+          <input class="btn" type="submit" id="UpdateSavePerson" value="Update Participant">
+          <input class="btn" type="button" value="Clear">
+	</form> 
+</div>
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form method="POST" id="deleteParticipant">
+      <legend><strong>Delete Participant</strong></legend>
+          <fieldset class="fields">
+          <p>Are you sure you wish to delete the following?</p>
+          <input type="hidden" name="personID" id="deletepersonID" value="2">
+          <label><strong>ID:</strong></label> 1
+            <label> <strong>Name:</strong> </label> Mike Tyson
+            
+    </fieldset>
+    <input class="btn" type="submit" id="DeletePerson" value="Delete Participant">
+          <input class="btn" type="button" value="Clear">
+  </form> 
+</div>
+</div>
+
+</body>
+</html>
