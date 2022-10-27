@@ -5,12 +5,46 @@
     <meta charset="utf-8">
     <title>Activities</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script language="Javascript">
+        function showform(formtype){
+            if (formtype == "edit") {
+                document.getElementById("activity-insert").style.visibility="hidden"
+                document.getElementById("activity-update").style.visibility="visible"
+                document.getElementById("activity-delete").style.visibility="hidden"
+                document.getElementById("table").style.filter="blur(3px)"
+                document.getElementById("header").style.filter="blur(3px)"    
+            }else if (formtype == "delete") {
+                document.getElementById("activity-insert").style.visibility="hidden"
+                document.getElementById("activity-update").style.visibility="hidden"
+                document.getElementById("activity-delete").style.visibility="visible"
+                document.getElementById("table").style.filter="blur(3px)"
+                document.getElementById("header").style.filter="blur(3px)"                 
+            } else if (formtype == "add") {
+                document.getElementById("activity-insert").style.visibility="visible"
+                document.getElementById("activity-update").style.visibility="hidden"
+                document.getElementById("activity-delete").style.visibility="hidden"
+                document.getElementById("table").style.filter="blur(3px)"
+                document.getElementById("header").style.filter="blur(3px)" 
+            } else {
+                document.getElementById("activity-insert").style.visibility="hidden"
+                document.getElementById("activity-update").style.visibility="hidden"
+                document.getElementById("activity-delete").style.visibility="hidden"
+                document.getElementById("table").style.filter="blur(0px)"
+                document.getElementById("header").style.filter="blur(0px)" 
+            }
+        }
+        function editActivity() {showform("edit");}
+        function deleteActivity() {showform("delete");}
+        function addActivity() {showform("insert");}
+        function closeForm() {showform("close");}
+    </script>
 </head>
 
 <body>
-    <header>
+
+    <header id="header">
     <h1 class="mainTitle">Activities</h1>
-    <div class="nav-div">
+    <div id="nav-div">
         <ul class="navbar">
             <li><a href="participants.html">Participants</a></li>
             <li><a href="volunteers.html">Volunteers</a></li>
@@ -20,7 +54,7 @@
     </div>
     </header>
     <div class="main">
-    <table>
+    <table id = "table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -36,17 +70,17 @@
         <tbody>
             <tr>
                 <td>1</td>
-                <td>Highlakes Baseball Field</td>
+                <td>Highlake's Baseball Field</td>
                 <td>Joseph</td>
                 <td>6 to 9</td>
-                <td>6_9Baseball_Marineers</td>
-                <td>6-9 baseball Team Marineers</td>
+                <td>6_9Baseball_Mariners</td>
+                <td>6-9 baseball Team Mariners</td>
                 <td>15</td>
                 <td>
-                    <button class="table-button" ion-button icon-only onclick="editActivity()">
+                    <button class="edit-button" ion-button icon-only onclick="editActivity()">
                         <ion-icon name="build-outline"></ion-icon>
                     </button><br>
-                    <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+                    <button class="del-button" ion-button icon-only onclick="deleteActivity()">
                         <ion-icon name="trash-outline"></ion-icon>
                     </button>
                 </td>
@@ -61,10 +95,10 @@
                 <td>4-5 baseball Team Orioles</td>
                 <td>15</td>
                 <td>
-                    <button class="table-button" ion-button icon-only onclick="editActivity()">
+                    <button class="edit-button" ion-button icon-only onclick="editActivity()">
                         <ion-icon name="build-outline"></ion-icon>
                     </button><br>
-                    <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+                    <button class="del-button" ion-button icon-only onclick="deleteActivity()">
                         <ion-icon name="trash-outline"></ion-icon>
                     </button>
                 </td>
@@ -78,10 +112,10 @@
                 <td>4-5 baseball Team Cardinals</td>
                 <td>15</td>
                 <td>
-                    <button class="table-button" ion-button icon-only onclick="editActivity()">
+                    <button class="edit-button" ion-button icon-only onclick="editActivity()">
                         <ion-icon name="build-outline"></ion-icon>
                     </button><br>
-                    <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+                    <button class="del-button" ion-button icon-only onclick="deleteActivity()">
                         <ion-icon name="trash-outline"></ion-icon>
                     </button>
                 </td>
@@ -93,19 +127,19 @@
     <div>
         <div id="activity-insert">
             <form method="POST" id="addActivity">
-                <legend align="center"><strong>Add Activity</strong></legend>
+                <legend><strong>Add Activity</strong></legend>
                 <fieldset class="fields">
                     <label> Location ID </label> 
                         <select name="location-dd">
-                            <option value=> </option>
-                            <option value="Highlakes Baseball Field">Highlakes Baseball Field</option>
+                            <option > </option>
+                            <option value="Highlake's Baseball Field">Highlake's Baseball Field</option>
                             <option value="Lava Ridge Baseball Field">Lava Ridge Baseball Field</option>
-                            <option value="Drake Park3">Drake Park</option>
+                            <option value="Drake Park">Drake Park</option>
                         </select>   
                         <br>
                     <label> Volunteer ID </label>
                         <select name="volunteer-dd">
-                            <option value=> </option>
+                            <option > </option>
                             <option value="Billy">Billy</option>
                             <option value="Bob">Bob</option>
                             <option value="Joseph">Joseph</option>
@@ -113,7 +147,7 @@
                     <br>
                     <label> Age Group </label> 
                         <select name="age_group">
-                            <option value=> </option>
+                            <option > </option>
                             <option value="4 to 5">4 to 5</option>
                             <option value="6 to 9">6 to 9</option>
                             <option value="10 to 13">10 to 13</option>
@@ -131,36 +165,54 @@
         <p>&nbsp;</p>
 
         <div id="activity-update">
-            <form method="POST" id="updateActivity">
-                <legend align="center"><strong>Update Activity</strong></legend>
+            <form method="POST" id="updateActivity" >
+                <button class="closebtn" ion-button icon-only onclick="closeForm()">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                </button>
+                
+                <legend>Update Activity</legend>
                 <fieldset class="fields">
-                    <label> Location ID </label> 
-                        <select name="location-dd">
-                            <option value=> </option>
-                            <option value="Highlakes Baseball Field">Highlakes Baseball Field</option>
-                            <option value="Lava Ridge Baseball Field">Lava Ridge Baseball Field</option>
-                            <option value="Drake Park3">Drake Park</option>
-                        </select>   
-                        <br>
-                    <label> Volunteer ID </label>
-                        <select name="volunteer-dd">
-                            <option value=> </option>
-                            <option value="Billy">Billy</option>
-                            <option value="Bob">Bob</option>
-                            <option value="Joseph">Joseph</option>
-                        </select>
-                    <br>
-                    <label> Age Group </label> <select name="age_group"><br>
-                        <option value=>&nbsp;</option>
-                        <option value="4 to 5">4 to 5</option>
-                        <option value="6 to 9">6 to 9</option>
-                        <option value="10 to 13">10 to 13</option>
-                        <option value="14 to 18">14 to 18</option>
-                        <option value="18+">18+</option>
-                        </select><br>
-                    <label> Name </label> <input type="text" name="activity_name"><br>
-                    <label> Description </label> <input type="text" name="activity_description"><br>
-                    <label> Max Participants </label> <input type="int" name="max_participants">
+                    <div class="form-ele">
+                        <label> Location </label>
+                            <select name="location-dd">
+                                <option value> </option>
+                                <option value="Highlakes Baseball Field">Highlakes Baseball Field</option>
+                                <option value="Lava Ridge Baseball Field">Lava Ridge Baseball Field</option>
+                                <option value="Drake Park">Drake Park</option>
+                            </select>   
+                    </div>
+                    <div class="form-ele">
+                        <label> Volunteer </label>
+                            <select name="volunteer-dd">
+                                <option value> </option>
+                                <option value="Billy">Billy</option>
+                                <option value="Bob">Bob</option>
+                                <option value="Joseph">Joseph</option>
+                            </select>
+                    </div>
+                    <div class="form-ele">
+                        <label> Age Group </label>
+                            <select name="age_group"><br>
+                                <option value>&nbsp;</option>
+                                <option value="4 to 5">4 to 5</option>
+                                <option value="6 to 9">6 to 9</option>
+                                <option value="10 to 13">10 to 13</option>
+                                <option value="14 to 18">14 to 18</option>
+                                <option value="18+">18+</option>
+                            </select>
+                    </div>        
+                    <div class="form-ele">
+                        <label> Name </label>
+                            <input type="text" name="activity_name">
+                    </div>
+                    <div class="form-ele">
+                        <label> Description </label>
+                            <input type="text" name="activity_description">
+                    </div>
+                    <div class="form-ele">
+                        <label> Max Participants </label>
+                            <input type="int" name="max_participants">
+                    </div>
             </fieldset>
                 <input class="btn" type="submit" id="updateActivity" value="Update Existing Activity">
             </form>
@@ -170,7 +222,7 @@
 
         <div id="activity-delete">
             <form method="POST" id="deleteActivity">
-                <legend align="center"><strong>Delete Activity</strong></legend>
+                <legend><strong>Delete Activity</strong></legend>
                     <fieldset class="fields">
                     <p>Are you sure you wish to delete the following?</p>
                     <input type="hidden" name="activityID" id="deleteActivityID" value="2">

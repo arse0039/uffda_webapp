@@ -35,24 +35,24 @@
       <td> Captain America</td>
       <td>612 Upside Down Lane</td>
       <td>
-        <button class="table-button" ion-button icon-only onclick="editActivity()">
-            <ion-icon name="build-outline"></ion-icon>
+        <button class="edit-button" ion-button icon-only onclick="editActivity()">
+            <ion-icon name="del-outline"></ion-icon>
         </button><br>
-        <button class="table-button" ion-button icon-only onclick="deleteActivity()">
-            <ion-icon name="trash-outline"></ion-icon>
+        <button class="edit-button" ion-button icon-only onclick="deleteActivity()">
+            <ion-icon name="del-outline"></ion-icon>
         </button>
     </td>
     </tr>
     <tr>
-      <td align="center"  >2</td>
-      <td align="center" >14 to 18</td>
-      <td align="center" > Mike Tyson</td>
-      <td align="center" >555 Punchers Way</td>
+      <td >2</td>
+      <td>14 to 18</td>
+      <td> Mike Tyson</td>
+      <td>555 Punchers Way</td>
       <td>
-        <button class="table-button" ion-button icon-only onclick="editActivity()">
+        <button class="edit-button" ion-button icon-only onclick="editActivity()">
             <ion-icon name="build-outline"></ion-icon>
         </button><br>
-        <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
             <ion-icon name="trash-outline"></ion-icon>
         </button>
     </td>
@@ -75,12 +75,14 @@
 </table>
 </div>
 <p>&nbsp;</p>
-<div id="forms">
-<div id="insert">
+
+<div class="forms">
+<div id="part-insert">
     <form method="POST" id="addParticipant">
         <legend><strong>Add Participant</strong></legend>
           <fieldset class="fields">
-            <label> First Name </label> <input type="text" name="fname"><br>
+            <label> First Name </label> 
+              <input type="text" name="fname"><br>
             <label> Last Name </label> <input type="text" name="lname"><br>
             <label> Age Group </label> <select name="ageGroup">
             	<option value="0">&nbsp;</option>
@@ -93,7 +95,6 @@
             <label> Address </label> <input type="text" name="address">
       </fieldset>
           <input class="btn" type="submit" id="addPerson" value="Add Participant">
-          <input class="btn" type="button" value="Clear">
 	</form> 
 </div>
 <p>&nbsp;</p>
