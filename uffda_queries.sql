@@ -1,7 +1,6 @@
 -- Query for add a new character functionality with hashtag # character being used to 
 -- denote the variables that will have data from the backend programming language 
 --- Select Age Group for dropdown population for Participants, Activities, 
-<<<<<<< HEAD
 SELECT age_group_id,
     description
 FROM Age_Groups;
@@ -12,20 +11,13 @@ FROM Locations;
 SELECT volunteer_id,
     name
 FROM Volunteers;
-=======
-SELECT age_group_id, description FROM Age_Groups;
-
---- Select Locations & Volunteers dropdown population for Activities
-SELECT location_id, name FROM Locations;
-SELECT volunteer_id, name FROM Volunteers;
-
 --- Select Participants & Activities dropdown population for Activity_Enrollments
-SELECT participant_id, name FROM Participants;
-SELECT activity_id, name FROM Activities;
-
-
-
->>>>>>> 473011f43bcabb893eebcf293cce5d0de5eb896f
+SELECT participant_id,
+    name
+FROM Participants;
+SELECT activity_id,
+    name
+FROM Activities;
 /********** Participants **********/
 --- Dispaly Table: Select all Participants including ID, Age Group, Name & Address ---
 SELECT participant_id,
@@ -77,35 +69,37 @@ VALUES (
         ORDER BY age_group_id ASC;
 --- Create New Volunteers ---
 INSERT INTO Age_Groups (description)
-<<<<<<< HEAD
-=======
-VALUES (#description);
-
---- Update Existing Age_Groups ---
-UPDATE Age_Groups
-    SET description = #description
-    WHERE age_group_id = #age_group_id_from_edit_form_button;
-
---- Delete Existing Age_Groups ---
-DELETE FROM Age_Groups
-WHERE age_group_id = #age_group_id_from_delete_form_button;
-
-
-
-/********** Activities **********/
-
---- Select all Activities including ID, Location, Volunteer, Age Group, Name, Description & Max Participants ---
-
-SELECT Locations.name AS Location, Volunteers.name AS Volunteer, Age_Groups.description AS Age_Group, name, description, max_participants 
-FROM Activities
-    INNER JOIN Locations ON Locations.location_id = Activities.location_id
-    INNER JOIN Volunteers ON Volunteers.volunteer_id = Activities.volunteer_id
-    INNER JOIN Age_Groups ON Age_Groups.age_group_id = Activities.age_group_id
-ORDER BY activity_id ASC;
-
+VALUES (
+        #description);
+        --- Update Existing Age_Groups ---
+        UPDATE Age_Groups
+        SET description = #description
+        WHERE age_group_id = #age_group_id_from_edit_form_button;
+            --- Delete Existing Age_Groups ---
+        DELETE FROM Age_Groups
+        WHERE age_group_id = #age_group_id_from_delete_form_button;
+            /********** Activities **********/
+            --- Select all Activities including ID, Location, Volunteer, Age Group, Name, Description & Max Participants ---
+        SELECT Locations.name AS Location,
+            Volunteers.name AS Volunteer,
+            Age_Groups.description AS Age_Group,
+            name,
+            description,
+            max_participants
+        FROM Activities
+            INNER JOIN Locations ON Locations.location_id = Activities.location_id
+            INNER JOIN Volunteers ON Volunteers.volunteer_id = Activities.volunteer_id
+            INNER JOIN Age_Groups ON Age_Groups.age_group_id = Activities.age_group_id
+        ORDER BY activity_id ASC;
 --- Create New Activities ---
-INSERT INTO Activities (Location, Volunteer, Age_Group, name, description, max_participants)
->>>>>>> 473011f43bcabb893eebcf293cce5d0de5eb896f
+INSERT INTO Activities (
+        Location,
+        Volunteer,
+        Age_Group,
+        name,
+        description,
+        max_participants
+    )
 VALUES (
         #description);
         --- Update Existing Age_Groups ---
@@ -157,50 +151,34 @@ WHERE activity_id = #activity_id_from_edit_form_button;
     --- Delete Existing Activities ---
 DELETE FROM Activities
 WHERE activity_id = #activity_id_from_delete_form_button;
-<<<<<<< HEAD
+    /********** Activity_Enrollments **********/
+    --- Dispaly Table: Select all Activity_Enrollments including ID, Participant & Activity ---
+SELECT enrollment_id,
+    Participants.name as Participant,
+    Activities.name as Activity
+FROM Activity_Enrollments
+    INNER JOIN Participants ON Participants.participant_id = Activity_Enrollments.participant_id
+    INNER JOIN Activities ON Activities.activity_id = Activity_Enrollments.activity_id
+ORDER BY enrollment_id ASC;
+--- Create New Activity_Enrollments ---
+INSERT INTO Activity_Enrollments (Participant, Activity)
+VALUES (
+        #participant_name_dropdown_input, 
+        #activity_name_dropdown_input
+    );
+--- Update Existing Activity_Enrollments ---
+UPDATE Activity_Enrollments
+SET Participant = #participant_name_dropdown_input,
+    Activity = #activity_name_dropdown_input
+WHERE enrollment_id = #enrollment_id_from_edit_form_button;
+    --- Delete Existing Activity_Enrollments ---
+DELETE FROM Activity_Enrollments
+WHERE enrollment_id = #enrollment_id_from_delete_form_button;
     /********** Locations **********/
     --- Display Table: Select all Locations including ID, name & address ---
 SELECT location_id,
     name,
     address
-=======
-
-
-
-/********** Activity_Enrollments **********/
-
---- Dispaly Table: Select all Activity_Enrollments including ID, Participant & Activity ---
-SELECT enrollment_id, Participants.name as Participant, Activities.name as Activity
-FROM Activity_Enrollments
-    INNER JOIN Participants ON Participants.participant_id = Activity_Enrollments.participant_id
-    INNER JOIN Activities ON Activities.activity_id = Activity_Enrollments.activity_id
-ORDER BY enrollment_id ASC;
-
---- Create New Activity_Enrollments ---
-INSERT INTO Activity_Enrollments (Participant, Activity)
-VALUES (
-    #participant_name_dropdown_input, 
-    #activity_name_dropdown_input
-    );
-
---- Update Existing Activity_Enrollments ---
-UPDATE Activity_Enrollments
-    SET
-        Participant = #participant_name_dropdown_input,
-        Activity = #activity_name_dropdown_input
-    WHERE enrollment_id = #enrollment_id_from_edit_form_button;
-
---- Delete Existing Activity_Enrollments ---
-DELETE FROM Activity_Enrollments
-WHERE enrollment_id = #enrollment_id_from_delete_form_button;
-
-
-
-/********** Locations **********/
-
---- Display Table: Select all Locations including ID, name & address ---
-SELECT location_id, name, address
->>>>>>> 473011f43bcabb893eebcf293cce5d0de5eb896f
 FROM Locations
 ORDER BY location_id ASC;
 --- Create New Volunteers ---
