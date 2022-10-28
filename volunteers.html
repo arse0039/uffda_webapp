@@ -38,10 +38,10 @@
                 <td>billy@email.com</td>
                 <td>Coach</td>
                 <td>
-                    <button class="table-button" ion-button icon-only onclick="editActivity()">
+                    <button class="edit-button" ion-button icon-only onclick="editActivity()">
                         <ion-icon name="build-outline"></ion-icon>
                     </button><br>
-                    <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+                    <button class="del-button" ion-button icon-only onclick="deleteActivity()">
                         <ion-icon name="trash-outline"></ion-icon>
                     </button>
                 </td>
@@ -52,10 +52,10 @@
                 <td>bob@email.com</td>
                 <td>Instructor</td>
                 <td>
-                    <button class="table-button" ion-button icon-only onclick="editActivity()">
+                    <button class="edit-button" ion-button icon-only onclick="editActivity()">
                         <ion-icon name="build-outline"></ion-icon>
                     </button><br>
-                    <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+                    <button class="del-button" ion-button icon-only onclick="deleteActivity()">
                         <ion-icon name="trash-outline"></ion-icon>
                     </button>
                 </td>
@@ -66,16 +66,17 @@
                 <td>joseph@email.com</td>
                 <td>Head Coach</td>
                 <td>
-                    <button class="table-button" ion-button icon-only onclick="editActivity()">
+                    <button class="edit-button" ion-button icon-only onclick="editActivity()">
                         <ion-icon name="build-outline"></ion-icon>
                     </button><br>
-                    <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+                    <button class="del-button" ion-button icon-only onclick="deleteActivity()">
                         <ion-icon name="trash-outline"></ion-icon>
                     </button>
                 </td>
             </tr>
         </tbody>
     </table>
+
 
     <p>&nbsp;</p>
 
@@ -95,7 +96,8 @@
                     </select><br>
             </fieldset>
                 <input class="btn" type="submit" id="addVolunteer" value="Create Volunteer">
-        </form>  
+        </form> 
+    </div> 
 
     <p>&nbsp;</p>
 
@@ -113,10 +115,10 @@
                     <option value="assistant coach">assistant coach</option>
                     <option value="guide">guide</option>
                     </select><br>
-          </fieldset>
-              <input class="btn" type="submit" id="updateVolunteer" value="Update Existing Volunteer">
+            </fieldset>
+                <input class="btn" type="submit" id="updateVolunteer" value="Update Existing Volunteer">
         </form>
-        
+        </div>
         <p>&nbsp;</p>
 
         <div id="delete">
@@ -131,7 +133,7 @@
               </fieldset>
               <input class="btn" type="submit" id="deleteVolunteer" value="Delete Volunteer">
             </form> 
-
+        </div>
             <p>&nbsp;</p>
         </div>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

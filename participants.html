@@ -37,12 +37,11 @@
       <td>612 Upside Down Lane</td>
       <td>
         <button class="edit-button" ion-button icon-only onclick="editActivity()">
-            <ion-icon name="del-outline"></ion-icon>
+          <ion-icon name="build-outline"></ion-icon>
         </button><br>
-        <button class="edit-button" ion-button icon-only onclick="deleteActivity()">
-            <ion-icon name="del-outline"></ion-icon>
+        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
+          <ion-icon name="trash-outline"></ion-icon>
         </button>
-    </td>
     </tr>
     <tr>
       <td >2</td>
@@ -64,20 +63,20 @@
       <td> Humpty Dumpty</td>
       <td>1820 High Wall Blvd</td>
       <td>
-        <button class="table-button" ion-button icon-only onclick="editActivity()">
+        <button class="edit-button" ion-button icon-only onclick="editActivity()">
             <ion-icon name="build-outline"></ion-icon>
         </button><br>
-        <button class="table-button" ion-button icon-only onclick="deleteActivity()">
+        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
             <ion-icon name="trash-outline"></ion-icon>
         </button>
     </td>
     </tr>
   </tbody>
 </table>
-</div>
+
 <p>&nbsp;</p>
 
-<div class="forms">
+
 <div id="part-insert">
     <form method="POST" id="addParticipant">
         <legend><strong>Add Participant</strong></legend>
