@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Activity Enrollments</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <h1 class="mainTitle">Activity Enrollments</h1>
+        <div class="nav-div">
+            <ul class="navbar">
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="participants.html">Participants</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="volunteers.html">Volunteers</a></li>
+                <li><a href="ageGroups.html">Age Groups</a></li>
+            </ul>  
+        </div>
+    </header>
+    <div class="main">   
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Participant</th>
+                <th>Activity</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Captain America</td>
+                <td>6_9Baseball_Marineers</td>
+                <td>
+                    <button class="table-button" ion-button icon-only onclick="editEnrollment()">
+                        <ion-icon name="build-outline"></ion-icon>
+                    </button><br>
+                    <button class="table-button" ion-button icon-only onclick="deleteEnrollment()">
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Mike Tyson</td>
+                <td>4_5Baseball_Orioles</td>
+                <td>
+                    <button class="table-button" ion-button icon-only onclick="editEnrollment()">
+                        <ion-icon name="build-outline"></ion-icon>
+                    </button><br>
+                    <button class="table-button" ion-button icon-only onclick="deleteEnrollment()">
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Humpty Dumpty</td>
+                <td>4_5Baseball_Orioles</td>
+                <td>
+                    <button class="table-button" ion-button icon-only onclick="editEnrollment()">
+                        <ion-icon name="build-outline"></ion-icon>
+                    </button><br>
+                    <button class="table-button" ion-button icon-only onclick="deleteEnrollment()">
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>&nbsp;</p>
+
+    <div id="enroll-insert">
+        <form method="POST" id="addEnrollment">
+            <legend><strong>Create New Activity Enrollment</strong></legend>
+            <fieldset class="fields">
+                <label> Participant </label> <select name="Participants"><br>
+                    <option value=>&nbsp;</option>
+                    <option value="Cap">Captain America</option>
+                    <option value="Iron">Mike Tyson</option>
+                    <option value="HD">Humpty Dumpty</option>
+                    </select><br>
+                <label> Activity </label> <select name="Activities"><br>
+                    <option value=>&nbsp;</option>
+                    <option value="1">6_9Baseball_Mariners</option>
+                    <option value="2">4_5Baseball_Orioles</option>
+                    <option value="3">4_5Baseball_Cardinals</option>
+                    <option value="4">4_5Baseball1_braves</option>
+                    </select><br>
+            </fieldset>
+                <input class="btn" type="submit" id="addEnrollment" value="Create Activity Enrollment">
+        </form>  
+
+    <p>&nbsp;</p>
+
+    <div id="update">
+        <form method="POST" id="updateEnrollment">
+            <legend align="center"><strong>Update Existing Activity Enrollment</strong></legend>
+            <fieldset class="fields">
+                <label> Participant </label> <select name="Participants"><br>
+                    <option value=>&nbsp;</option>
+                    <option value="Cap">Captain America</option>
+                    <option value="Iron">Mike Tyson</option>
+                    <option value="HD">Humpty Dumpty</option>
+                    </select><br>
+                <label> Activity </label> <select name="Activities"><br>
+                    <option value=>&nbsp;</option>
+                    <option value="1">6_9Baseball_Mariners</option>
+                    <option value="2">4_5Baseball_Orioles</option>
+                    <option value="3">4_5Baseball_Cardinals</option>
+                    <option value="4">4_5Baseball1_braves</option>
+                    </select><br>
+            </fieldset>
+              <input class="btn" type="submit" id="updateEnrollment" value="Update Existing Activity Enrollment">
+        </form>
+        
+        <p>&nbsp;</p>
+
+        <div id="delete">
+            <form method="POST" id="deleteEnrollment">
+                <legend align="center"><strong>Delete Existing Activity Enrollment</strong></legend>
+                    <fieldset class="fields">
+                    <p>Are you sure you wish to delete the following?</p>
+                    <input type="hidden" name="enrollmentID" id="deleteenrollmentID" value="2">
+                    <label><strong>ID:</strong></label> 2
+                      <label> <strong>Participant</strong> </label> Mike Tyson
+                      <label> <strong>Activity</strong> </label> 4_5Baseball_Orioles
+                      
+              </fieldset>
+              <input class="btn" type="submit" id="deleteEnrollment" value="Delete Activity Enrollment">
+            </form> 
+
+            <p>&nbsp;</p>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
+    </body>
+
+</html>
