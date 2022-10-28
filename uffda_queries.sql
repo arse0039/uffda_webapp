@@ -3,15 +3,15 @@
 
 
 --- Select Age Group for dropdown population for Participants, Activities, 
-
 SELECT age_group_id, description FROM Age_Groups;
 
-
 --- Select Locations & Volunteers dropdown population for Activities
-
 SELECT location_id, name FROM Locations;
-
 SELECT volunteer_id, name FROM Volunteers;
+
+--- Select Participants & Activities dropdown population for Activity_Enrollments
+SELECT participant_id, name FROM Participants;
+SELECT activity_id, name FROM Activities;
 
 
 
@@ -100,7 +100,7 @@ FROM Activities
     INNER JOIN Age_Groups ON Age_Groups.age_group_id = Activities.age_group_id
 ORDER BY activity_id ASC;
 
---- Create New Acivities ---
+--- Create New Activities ---
 INSERT INTO Activities (Location, Volunteer, Age_Group, name, description, max_participants)
 VALUES (
     #location_name_dropdown_input,
@@ -125,6 +125,36 @@ UPDATE Activities
 --- Delete Existing Activities ---
 DELETE FROM Activities
 WHERE activity_id = #activity_id_from_delete_form_button;
+
+
+
+/********** Activity_Enrollments **********/
+
+--- Dispaly Table: Select all Activity_Enrollments including ID, Participant & Activity ---
+SELECT enrollment_id, Participants.name as Participant, Activities.name as Activity
+FROM Activity_Enrollments
+    INNER JOIN Participants ON Participants.participant_id = Activity_Enrollments.participant_id
+    INNER JOIN Activities ON Activities.activity_id = Activity_Enrollments.activity_id
+ORDER BY enrollment_id ASC;
+
+--- Create New Activity_Enrollments ---
+INSERT INTO Activity_Enrollments (Participant, Activity)
+VALUES (
+    #participant_name_dropdown_input, 
+    #activity_name_dropdown_input
+    );
+
+--- Update Existing Activity_Enrollments ---
+UPDATE Activity_Enrollments
+    SET
+        Participant = #participant_name_dropdown_input,
+        Activity = #activity_name_dropdown_input
+    WHERE enrollment_id = #enrollment_id_from_edit_form_button;
+
+--- Delete Existing Activity_Enrollments ---
+DELETE FROM Activity_Enrollments
+WHERE enrollment_id = #enrollment_id_from_delete_form_button;
+
 
 
 /********** Locations **********/
