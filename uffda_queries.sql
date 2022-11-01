@@ -67,7 +67,7 @@ VALUES (
             description
         FROM Age_Groups
         ORDER BY age_group_id ASC;
---- Create New Volunteers ---
+--- Create New Age Groups ---
 INSERT INTO Age_Groups (description)
 VALUES (
         #description);
