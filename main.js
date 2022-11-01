@@ -11,7 +11,7 @@ function showform(formtype){
         document.getElementById("activity-delete").style.visibility="visible"
         document.getElementById("table").style.filter="blur(3px)"
         document.getElementById("header").style.filter="blur(3px)"                 
-    } else if (formtype == "add") {
+    } else if (formtype == "insert") {
         document.getElementById("activity-insert").style.visibility="visible"
         document.getElementById("activity-update").style.visibility="hidden"
         document.getElementById("activity-delete").style.visibility="hidden"
