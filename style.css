@@ -79,7 +79,7 @@ header ul li:hover{
     margin-bottom: 10px;
 }
 
-.search-input{
+#search-div .search-input{
     width: 20%;
     height: 35px;
     margin-left: 10%;
