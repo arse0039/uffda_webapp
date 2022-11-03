@@ -1,11 +1,15 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Locations</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <title>Locations</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="main.js"></script>
 </head>
 
 <body>
-  <header>
+  <header id="header">
     <h1 class="mainTitle">Locations</h1>
       <div class="nav-div">
           <ul class="navbar">
@@ -19,100 +23,134 @@
       </div>
     </header>
     <div class="main">
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Highlakes Baseball Field</td>
-      <td> 555 Highlakes Way</td>
-      <td>
-        <button class="edit-button" ion-button icon-only onclick="editActivity()">
-            <ion-icon name="build-outline"></ion-icon>
-        </button><br>
-        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
-            <ion-icon name="trash-outline"></ion-icon>
-        </button>
-    </td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Lava Ridge Baseball Field</td>
-      <td>555 Lava Ridge Rd</td>
-      <td>
-        <button class="edit-button" ion-button icon-only onclick="editActivity()">
-            <ion-icon name="build-outline"></ion-icon>
-        </button><br>
-        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
-            <ion-icon name="trash-outline"></ion-icon>
-        </button>
-    </td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Drake Park</td>
-      <td>555 DrakeNJosh Ave</td>
-      <td>
-        <button class="edit-button" ion-button icon-only onclick="editActivity()">
-            <ion-icon name="build-outline"></ion-icon>
-        </button><br>
-        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
-            <ion-icon name="trash-outline"></ion-icon>
-        </button>
-    </td>
-    </tr>
-  </tbody>
-</table>
+      <div id="table-div">
+          <div id="search-div">
+              <input type="text" class="search-input" placeholder="Name Filter">
+          </div>
+      <table id="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Highlakes Baseball Field</td>
+            <td> 555 Highlakes Way</td>
+            <td>
+              <button class="edit-button" ion-button icon-only onclick="edit()">
+                  <ion-icon name="build-outline"></ion-icon>
+              </button><br>
+              <button class="del-button" ion-button icon-only onclick="del()">
+                  <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Lava Ridge Baseball Field</td>
+            <td>555 Lava Ridge Rd</td>
+            <td>
+              <button class="edit-button" ion-button icon-only onclick="edit()">
+                  <ion-icon name="build-outline"></ion-icon>
+              </button><br>
+              <button class="del-button" ion-button icon-only onclick="del()">
+                  <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Drake Park</td>
+            <td>555 DrakeNJosh Ave</td>
+            <td>
+              <button class="edit-button" ion-button icon-only onclick="edit()">
+                  <ion-icon name="build-outline"></ion-icon>
+              </button><br>
+              <button class="del-button" ion-button icon-only onclick="del()">
+                  <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-<p>&nbsp;</p>
+    <div class="insert-button">
+      <button class="add-button" onclick="add()">Add New Location</button>
+    </div>
 
-<div id="insert">
-    <form method="POST" id="addLoc">
-        <legend><strong>Add Location</strong></legend>
-          <fieldset class="fields">
-            <label> Location Name </label> <input type="text" name="locname"><br>
-            <label> Address       </label> <input type="text" name="locaddress"><br>
-      </fieldset>
-          <input class="btn" type="submit" id="addLocation" value="Add Location">
-	</form> 
-</div>
-<p>&nbsp;</p>
-<div id="update">
-    <form method="POST" id="UpdateLoc">
-        <legend><strong>Update Location</strong></legend>
-          <fieldset class="fields">
-          <input type="hidden" name="locationID" id="updateLocation" value="2">
-          <label> ID: </label> 2 <br>
-          <label> Location Name </label> <input type="text" name="locname" value="Lava Ridge Baseball Field"><br>
-          <label> Address       </label> <input type="text" name="locaddress" value="555 Lava Ridge Rd"><br>
+    <div>
+      <div id="insert-form">
+        <button class="closebtn" ion-button icon-only onclick="closeForm()">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </button>
+        <form method="POST" id="addLoc">
+          <legend>Add Location</legend>
+            <fieldset class="fields">
+              <div class="form-ele">
+                <label> Location Name </label> 
+                <input type="text" name="location-name">
+              </div>
+              <div class="form-ele">
+                <label> Address</label> 
+                <input type="text" name="location-address">
+              </div>
+            </fieldset>
+            <input class="btn" type="submit" id="addLocation" value="Add Location">
+        </form> 
+      </div>
 
-      </fieldset>
+      <div id="update-form">
+        <button class="closebtn" ion-button icon-only onclick="closeForm()">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </button>
+        <form method="POST" id="UpdateLoc">
+            <legend>Update Location</legend>
+              <fieldset class="fields">
+              <div class="form-ele">
+                <label>ID: </label>
+                <input type="text" name="locationID" id="updateLocation" value="2">
+              </div>
+              <div class="form-ele">  
+                <label>Location Name </label> 
+                <input type="text" name="locname" value="Lava Ridge Baseball Field">
+              </div>
+              <div class="form-ele">
+                <label>Address</label> 
+                <input type="text" name="local-address" value="555 Lava Ridge Rd">
+              </div>
+          </fieldset>
           <input class="btn" type="submit" id="UpdateLoc" value="Update Location">
-	</form> 
-</div>
-<p>&nbsp;</p>
-<div id="delete" style="display: block">
-  <form method="POST" id="deleteLocation">
-      <legend><strong>Delete Location</strong></legend>
-          <fieldset class="fields">
-          <p>Are you sure you wish to delete this location?</p>
-          <input type="hidden" name="locationID" id="deletelocationID" value="2">
-          <label><strong>ID:</strong></label> 2 <br>
-            <label> <strong>Name:</strong> </label> Lava Ridge Baseball Field
-            
-    </fieldset>
-    <input class="btn" type="submit" id="DeleteLocation" value="Delete Location">
-  </form> 
-</div>
+        </form> 
+      </div>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
-</body>
+      <div id="delete-form">
+        <button class="closebtn" ion-button icon-only onclick="closeForm()">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </button>
+        <form method="POST" id="deleteLocation">
+            <legend>Delete Location</legend>
+                <fieldset class="fields">
+                <p>Are you sure you wish to delete this location?</p>
+                <div class="form-ele">
+                  <label>ID:</label>
+                  <input type="text" name="locationID" id="deletelocationID" value="3">
+                </div>
+                <div class="form-ele">
+                  <label>Name:</label> 
+                  <input type="text" name="locationID" id="deletelocationID" value="Drake Park">
+                </div>
+          </fieldset>
+          <input class="btn" type="submit" id="DeleteLocation" value="Delete Location">
+        </form> 
+    </div>
+  </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
+  </body>
 </html>
