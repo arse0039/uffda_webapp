@@ -114,7 +114,6 @@ thead th{
     text-align: center;
     font-weight: bold;
     padding: 0px 22px;
-
 }
 
 td{
@@ -249,9 +248,11 @@ label {
     margin-bottom: 5px;
     width: 100%;
     height: 28px;
+    padding-left: 5px;
 }
 
-#activity-update, #activity-insert, #activity-delete {
+#update-form, #insert-form, #delete-form
+{
     position: absolute;
     left: 35%;
     top: 15%;
@@ -262,9 +263,7 @@ label {
     visibility: hidden;
 }
 
-#activity-insert {
-    visibility: hidden;
-}
+
 
 
 

@@ -11,17 +11,17 @@
 <body>
     
     <header id="header">
-    <h1 class="mainTitle">Activities</h1>
-    <div id="nav-div">
-        <ul class="navbar">
-            <li><a href="activities.html">Activities</a></li>
-            <li><a href="participants.html">Participants</a></li>
-            <li><a href="volunteers.html">Volunteers</a></li>
-            <li><a href="locations.html">Locations</a></li>
-            <li><a href="ageGroups.html">Age Groups</a></li>
-            <li><a href="activity_enrollments.html">Enrollments</a></li>
-        </ul>  
-    </div>
+        <h1 class="mainTitle">Activities</h1>
+        <div id="nav-div">
+            <ul class="navbar">
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="participants.html">Participants</a></li>
+                <li><a href="volunteers.html">Volunteers</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="ageGroups.html">Age Groups</a></li>
+                <li><a href="activity_enrollments.html">Enrollments</a></li>
+            </ul>  
+        </div>
     </header>
     <div class="main">
         <div id="table-div">
@@ -53,14 +53,13 @@
                 <td>6-9 baseball Team Mariners</td>
                 <td>15</td>
                 <td>
-                    <button class="edit-button" ion-button icon-only onclick="editActivity()">
+                    <button class="edit-button" ion-button icon-only onclick="edit()">
                         <ion-icon name="build-outline"></ion-icon>
                     </button><br>
-                    <button class="del-button" ion-button icon-only onclick="deleteActivity()">
+                    <button class="del-button" ion-button icon-only onclick="del()">
                         <ion-icon name="trash-outline"></ion-icon>
                     </button>
-                </td>
-                    
+                </td>                
             </tr>
             <tr>
                 <td>2</td>
@@ -71,10 +70,10 @@
                 <td>4-5 baseball Team Orioles</td>
                 <td>15</td>
                 <td>
-                    <button class="edit-button" ion-button icon-only onclick="editActivity()">
+                    <button class="edit-button" ion-button icon-only onclick="edit()">
                         <ion-icon name="build-outline"></ion-icon>
                     </button><br>
-                    <button class="del-button" ion-button icon-only onclick="deleteActivity()">
+                    <button class="del-button" ion-button icon-only onclick="del()">
                         <ion-icon name="trash-outline"></ion-icon>
                     </button>
                 </td>
@@ -88,10 +87,10 @@
                 <td>4-5 baseball Team Cardinals</td>
                 <td>15</td>
                 <td>
-                    <button class="edit-button" ion-button icon-only onclick="editActivity()">
+                    <button class="edit-button" ion-button icon-only onclick="edit()">
                         <ion-icon name="build-outline"></ion-icon>
                     </button><br>
-                    <button class="del-button" ion-button icon-only onclick="deleteActivity()">
+                    <button class="del-button" ion-button icon-only onclick="del()">
                         <ion-icon name="trash-outline"></ion-icon>
                     </button>
                 </td>
@@ -99,13 +98,14 @@
         </tbody>
     </table>
     </div>
+
     <div class="insert-button">
-        <button class="add-button" onclick="addActivity()">Add New Activity</button>
+        <button class="add-button" onclick="add()">Add New Activity</button>
     </div>
 
-    <p>&nbsp;</p>
+
     <div>
-        <div id="activity-insert">
+        <div id="insert-form">
             <button class="closebtn" ion-button icon-only onclick="closeForm()">
                 <ion-icon name="close-circle-outline"></ion-icon>
             </button>
@@ -158,12 +158,11 @@
             </form>
         </div>  
 
-        <p>&nbsp;</p>
-
-        <div id="activity-update">
+        <div id="update-form">
             <button class="closebtn" ion-button icon-only onclick="closeForm()">
                 <ion-icon name="close-circle-outline"></ion-icon>
             </button>
+
             <form method="POST" id="updateActivity" >              
                 <legend>Update Activity</legend>
                 <fieldset class="fields">
@@ -198,15 +197,15 @@
                     </div>        
                     <div class="form-ele">
                         <label> Name </label>
-                            <input type="text" name="activity_name">
+                        <input type="text" name="activity_name">
                     </div>
                     <div class="form-ele">
                         <label> Description </label>
-                            <input type="text" name="activity_description">
+                        <input type="text" name="activity_description">
                     </div>
                     <div class="form-ele">
                         <label> Max Participants </label>
-                            <input type="int" name="max_participants">
+                        <input type="int" name="max_participants">
                     </div>
             </fieldset>
                 <input class="btn" type="submit" id="updateActivity" value="Update Existing Activity">
@@ -215,24 +214,26 @@
         
         <p>&nbsp;</p>
 
-        <div id="activity-delete">
+        <div id="delete-form">
             <button class="closebtn" ion-button icon-only onclick="closeForm()">
                 <ion-icon name="close-circle-outline"></ion-icon>
             </button>
             <form method="POST" id="deleteActivity">
-                <legend><strong>Delete Activity</strong></legend>
+                <legend>Delete Activity</strong></legend>
                     <fieldset class="fields">
                     <p>Are you sure you wish to delete the following?</p>
-                    <input type="hidden" name="activityID" id="deleteActivityID" value="2">
-                    <label><strong>ID:</strong></label> 2
-                        <label> <strong>Name</strong> </label> 4_5Baseball_Orioles
-                        
+                    <div class="form-ele">
+                        <label>ID:</strong></label> <br>
+                        <input type="text" name="activityID" id="deleteActivityID" value="2">   
+                    </div>
+                    <div class="form-ele">
+                        <label>Name</strong> </label> 
+                        <input type="text" name="activityID" id="deleteActivityID" value="4_5Baseball_Orioles"> 
+                    </div> 
                 </fieldset>
                 <input class="btn" type="submit" id="deleteActivity" value="Delete Activity">
             </form> 
-        </div>
-        <p>&nbsp;</p>
-        
+        </div>   
     </div>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
