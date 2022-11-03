@@ -22,6 +22,7 @@
             </ul>  
         </div>
     </header>
+
     <div class="main">
         <div id="table-div">
             <div id="search-div">
@@ -29,79 +30,78 @@
                 <input type="text" class="search-input" placeholder="Age Group Filter">
                 <input type="text" class="search-input" placeholder="Name Filter">
             </div>
-    <table id = "table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Location</th>
-                <th>Volunteer</th>
-                <th>Age Group</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Max Participants</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Highlake's Baseball Field</td>
-                <td>Joseph</td>
-                <td>6 to 9</td>
-                <td>6_9Baseball_Mariners</td>
-                <td>6-9 baseball Team Mariners</td>
-                <td>15</td>
-                <td>
-                    <button class="edit-button" ion-button icon-only onclick="edit()">
-                        <ion-icon name="build-outline"></ion-icon>
-                    </button><br>
-                    <button class="del-button" ion-button icon-only onclick="del()">
-                        <ion-icon name="trash-outline"></ion-icon>
-                    </button>
-                </td>                
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Lava Ridge Baseball Field</td>
-                <td>Katrina</td>
-                <td>4 to 5</td>
-                <td>4_5Baseball_Orioles</td>
-                <td>4-5 baseball Team Orioles</td>
-                <td>15</td>
-                <td>
-                    <button class="edit-button" ion-button icon-only onclick="edit()">
-                        <ion-icon name="build-outline"></ion-icon>
-                    </button><br>
-                    <button class="del-button" ion-button icon-only onclick="del()">
-                        <ion-icon name="trash-outline"></ion-icon>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Ensworth Baseball Field</td>
-                <td>Julie</td>
-                <td>4 to 5</td>
-                <td>4_5Baseball_Cardinals</td>
-                <td>4-5 baseball Team Cardinals</td>
-                <td>15</td>
-                <td>
-                    <button class="edit-button" ion-button icon-only onclick="edit()">
-                        <ion-icon name="build-outline"></ion-icon>
-                    </button><br>
-                    <button class="del-button" ion-button icon-only onclick="del()">
-                        <ion-icon name="trash-outline"></ion-icon>
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+        <table id = "table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Location</th>
+                    <th>Volunteer</th>
+                    <th>Age Group</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Max Participants</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Highlake's Baseball Field</td>
+                    <td>Joseph</td>
+                    <td>6 to 9</td>
+                    <td>6_9Baseball_Mariners</td>
+                    <td>6-9 baseball Team Mariners</td>
+                    <td>15</td>
+                    <td>
+                        <button class="edit-button" ion-button icon-only onclick="edit()">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </button><br>
+                        <button class="del-button" ion-button icon-only onclick="del()">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </button>
+                    </td>                
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Lava Ridge Baseball Field</td>
+                    <td>Katrina</td>
+                    <td>4 to 5</td>
+                    <td>4_5Baseball_Orioles</td>
+                    <td>4-5 baseball Team Orioles</td>
+                    <td>15</td>
+                    <td>
+                        <button class="edit-button" ion-button icon-only onclick="edit()">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </button><br>
+                        <button class="del-button" ion-button icon-only onclick="del()">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Ensworth Baseball Field</td>
+                    <td>Julie</td>
+                    <td>4 to 5</td>
+                    <td>4_5Baseball_Cardinals</td>
+                    <td>4-5 baseball Team Cardinals</td>
+                    <td>15</td>
+                    <td>
+                        <button class="edit-button" ion-button icon-only onclick="edit()">
+                            <ion-icon name="build-outline"></ion-icon>
+                        </button><br>
+                        <button class="del-button" ion-button icon-only onclick="del()">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="insert-button">
         <button class="add-button" onclick="add()">Add New Activity</button>
     </div>
-
 
     <div>
         <div id="insert-form">

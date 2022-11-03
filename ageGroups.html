@@ -1,136 +1,170 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <title>Age Groups</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <title>Activities</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="main.js"></script>
 </head>
 
 <body>
-<header>
-  <h1 class="mainTitle">Age Groups</h1>
-  <div class="nav-div">
-      <ul class="navbar">
-        <li><a href="activities.html">Activities</a></li>
-        <li><a href="participants.html">Participants</a></li>
-        <li><a href="volunteers.html">Volunteers</a></li>
-        <li><a href="locations.html">Locations</a></li>
-        <li><a href="ageGroups.html">Age Groups</a></li>
-        <li><a href="activity_enrollments.html">Enrollments</a>
-      </ul>  
-  </div>
-  </header>
-<div class="main">
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Description</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>4 to 5</td>
-      <td>
-        <button class="edit-button" ion-button icon-only onclick="editActivity()">
-            <ion-icon name="build-outline"></ion-icon>
-        </button><br>
-        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
-            <ion-icon name="trash-outline"></ion-icon>
-        </button>
-    </td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>6 to 9</td>
-      <td>
-        <button class="edit-button" ion-button icon-only onclick="editActivity()">
-            <ion-icon name="build-outline"></ion-icon>
-        </button><br>
-        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
-            <ion-icon name="trash-outline"></ion-icon>
-        </button>
-    </td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>10 to 13</td>
-      <td>
-        <button class="edit-button" ion-button icon-only onclick="editActivity()">
-            <ion-icon name="build-outline"></ion-icon>
-        </button><br>
-        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
-            <ion-icon name="trash-outline"></ion-icon>
-        </button>
-    </td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>14 to 18</td>
-      <td>
-        <button class="edit-button" ion-button icon-only onclick="editActivity()">
-            <ion-icon name="build-outline"></ion-icon>
-        </button><br>
-        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
-            <ion-icon name="trash-outline"></ion-icon>
-        </button>
-    </td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>18+</td>
-      <td>
-        <button class="edit-button" ion-button icon-only onclick="editActivity()">
-            <ion-icon name="build-outline"></ion-icon>
-        </button><br>
-        <button class="del-button" ion-button icon-only onclick="deleteActivity()">
-            <ion-icon name="trash-outline"></ion-icon>
-        </button>
-    </td>
-    </tr>
-  </tbody>
-</table>
+    <header id="header">
+      <h1 class="mainTitle">Age Groups</h1>
+      <div class="nav-div">
+          <ul class="navbar">
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="participants.html">Participants</a></li>
+            <li><a href="volunteers.html">Volunteers</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="ageGroups.html">Age Groups</a></li>
+            <li><a href="activity_enrollments.html">Enrollments</a>
+          </ul>  
+      </div>
+    </header>
 
-<p>&nbsp;</p>
-<br>
-<div class="forms">
-  <div id="insert">
-      <form method="POST" id="addAge">
-          <legend><strong>Add Age Group</strong></legend>
-            <fieldset class="fields">
-              <label> Description </label> <input type="text" name="ageGroupName"><br>
-        </fieldset>
-            <input class="btn" type="submit" id="addAgeButton" value="Add Age Group">
-    </form> 
-  </div>
-<p>&nbsp;</p>
-  <div id="update">
-      <form method="POST" id="UpdateAge">
-          <legend><strong>Update Age Group</strong></legend>
-            <fieldset class="fields">
-            <input type="hidden" name="locationID" id="updateAgeinput" value="2">
-            <label> ID: </label> 2 <br>
-            <label> Description </label> <input type="text" name="agedesc" value="6 to 9"><br>
-        </fieldset>
+    <div class="main">
+      <div id="table-div">
+          <div id="search-div">
+              <input type="text" class="search-input" placeholder="Age Group Filter">
+          </div>
+
+      <table id="header">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>4 to 5</td>
+            <td>
+              <button class="edit-button" ion-button icon-only onclick="edit()">
+                  <ion-icon name="build-outline"></ion-icon>
+              </button><br>
+              <button class="del-button" ion-button icon-only onclick="del()">
+                  <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>6 to 9</td>
+            <td>
+              <button class="edit-button" ion-button icon-only onclick="edit()">
+                  <ion-icon name="build-outline"></ion-icon>
+              </button><br>
+              <button class="del-button" ion-button icon-only onclick="del()">
+                  <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>10 to 13</td>
+            <td>
+              <button class="edit-button" ion-button icon-only onclick="edit()">
+                  <ion-icon name="build-outline"></ion-icon>
+              </button><br>
+              <button class="del-button" ion-button icon-only onclick="del()">
+                  <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>14 to 18</td>
+            <td>
+              <button class="edit-button" ion-button icon-only onclick="edit()">
+                  <ion-icon name="build-outline"></ion-icon>
+              </button><br>
+              <button class="del-button" ion-button icon-only onclick="del()">
+                  <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>18+</td>
+            <td>
+              <button class="edit-button" ion-button icon-only onclick="edit()">
+                  <ion-icon name="build-outline"></ion-icon>
+              </button><br>
+              <button class="del-button" ion-button icon-only onclick="del()">
+                  <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insert-button">
+      <button class="add-button" onclick="add()">Add New Age Group</button>
+    </div>
+
+    <div>
+      <div id="insert-form">
+        <button class="closebtn" ion-button icon-only onclick="closeForm()">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </button>
+        <form method="POST" id="addAge">
+            <legend>Add Age Group</legend>
+              <fieldset class="fields">
+                <div class="form-ele">
+                  <label> Description </label> 
+                  <input type="text" name="ageGroupName"><br>
+              </div>
+              </fieldset>
+              <input class="btn" type="submit" id="addAgeButton" value="Add Age Group">
+        </form> 
+      </div>
+
+      <div id="update-form">
+        <button class="closebtn" ion-button icon-only onclick="closeForm()">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </button>
+        <form method="POST" id="UpdateAge">
+            <legend>Update Age Group</legend>
+              <fieldset class="fields">
+                <div class="form-ele">
+                  <label> ID: </label>  
+                  <input type="text" name="locationID" id="updateAgeinput" value="2">
+                </div>
+                <div class="form-ele">  
+                  <label> Description </label> 
+                  <input type="text" name="age-desc" value="6 to 9">
+                </div>
+          </fieldset>
             <input class="btn" type="submit" id="UpdateAgeSubmit" value="Update Age Group">
-    </form> 
-  </div>
-<p>&nbsp;</p>
-  <div id="delete" style="display: block">
-    <form method="POST" id="delAge">
-        <legend><strong>Delete Age Group</strong></legend>
-            <fieldset class="fields">
-            <p>Are you sure you wish to delete this age group?</p>
-            <input type="hidden" name="ageID" id="deleteAge" value="2">
-            <label><strong>ID:</strong></label> 2 <br>
-              <label> <strong>Name:</strong> </label> 6 to 9
-              
-      </fieldset>
-      <input class="btn" type="submit" id="DeleteAge" value="Delete Age Group">
-    </form> 
-  </div>
-</div>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
-</body>
+      </form> 
+      </div>
+
+      <div id="delete-form">
+        <button class="closebtn" ion-button icon-only onclick="closeForm()">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </button>
+        <form method="POST" id="delAge">
+            <legend>Delete Age Group</legend>
+                <fieldset class="fields">
+                <p>Are you sure you wish to delete this age group?</p>
+                <div class="form-ele">
+                  <label>ID:</label>
+                  <input type="text" name="ageID" id="deleteAge" value="2">
+                </div>
+                <div class="form-ele">
+                  <label>Name:</label>
+                  <input type="text" name="ageID" id="deleteAge" value="6 to 9">
+                </div>             
+              </fieldset>
+          <input class="btn" type="submit" id="DeleteAge" value="Delete Age Group">
+        </form> 
+      </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>   
+  </body>
 </html>
